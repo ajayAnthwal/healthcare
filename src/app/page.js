@@ -84,8 +84,8 @@ const Home = () => {
   ];
 
   return (
-    <div>
-      <Image src={banner} alt="banner" className="w-full z-1" />
+    <div className="overflow-x-hidden">
+      <Image src={banner} alt="banner" className="hidden md:block w-full z-1" />
       <div className="flex flex-col items-center mt-5 container w-full mx-auto px-4">
         <ComprehensiveServices />
       </div>
@@ -247,7 +247,7 @@ const Home = () => {
           are gaining attention.
         </p>
         <div
-          className="mt-10 flex w-3/4 container mx-auto"
+          className="mt-10 flex mx-2 md:w-3/4 md:mx-auto"
           style={{
             boxShadow: "0px 15px 35.8px 0px rgba(0, 0, 0, 0.25)",
             borderRadius: "20px",
@@ -260,14 +260,15 @@ const Home = () => {
               borderTopLeftRadius: "20px",
               borderBottomLeftRadius: "20px",
             }}
+            className="w-[140px] h-[140px]"
           />
-          <div className="m-5">
-            <h1 className="text-3xl mt-4 font-bold">Recent Media Coverage</h1>
-            <p className="mt-4">
+          <div className="md:m-5 m-[2px]">
+            <h1 className="text-[14px] md:text-3xl md:mt-4 mt-[5px] font-bold">Recent Media Coverage</h1>
+            <p className="md:mt-4 mt-[4px] text-[12px] md:text-md ">
               &quot;Apollo Homecare’s New Homecare Initiative Gains Recognition
               in Healthcare Magazine&quot;
             </p>
-            <p>
+            <p className="text-[12px] text-md">
               &quot;Apollo Homecare Featured in National News for Pioneering
               Virtual Health Services&quot;
             </p>

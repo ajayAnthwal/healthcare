@@ -56,32 +56,40 @@ export default async function Footer() {
       className="w-full p-4 pt-10 mt-5"
       style={{ backgroundColor: "#002122", color: "white" }}
     >
-      <div className="flex  container mx-auto">
-        {items.map((item, index) => (
-          <>
-            <div key={index} style={{ width: "12.5rem" }}>
-              <h4 className="font-semibold">{item.title}</h4>
-              <div className="mt-3">
-                {item.options.map((option, index) => (
-                  <p
-                    key={index}
-                    className="text-sm mb-2"
-                    style={{ opacity: "0.8", fontWeight: "300" }}
-                  >
-                    {option}
-                  </p>
-                ))}
+      <div className="flex flex-col md:flex-row">
+        <div className="grid grid-cols-2 md:flex container mx-auto gap-2">
+          {/* <div className="grid grid-cols-3 gap-4 p-4"> */}
+          {items.map((item, index) => (
+            <>
+              {/* <div key={index} style={{ width: "12.5rem" }}> */}
+              <div
+                key={index}
+                className="border-none md:border-r px-4 border-gray-400"
+              >
+                <h4 className="font-semibold">{item.title}</h4>
+                <div className="mt-3">
+                  {item.options.map((option, index) => (
+                    <p
+                      key={index}
+                      className="text-sm mb-2"
+                      style={{ opacity: "0.8", fontWeight: "300" }}
+                    >
+                      {option}
+                    </p>
+                  ))}
+                </div>
+                <div className="block md:hidden border-b border-gray-500"></div>
               </div>
-            </div>
-            {index !== items.length - 1 && (
+              {/* {index !== items.length - 1 && (
               <hr
                 style={{ borderWidth: ".5px", height: "auto", opacity: ".28" }}
                 className="me-3"
               />
-            )}
-          </>
-        ))}
-        <div className="flex flex-col justify-center items-center">
+            )} */}
+            </>
+          ))}
+        </div>
+        <div className="mt-8 md:mt-0 flex flex-col justify-center items-center">
           <Button
             className="ps-3 pe-3"
             style={{
@@ -168,32 +176,43 @@ export default async function Footer() {
           </div>
         </div>
       </div>
+
       <hr className="mt-1" style={{ opacity: "0.28" }} />
-      <div className="mt-4 flex  container mx-auto" style={{ opacity: "0.8" }}>
-        <h1 className="font-semibold me-3">CONTACT US:</h1>
-        {cities.map((item, index) => (
-          <>
-            <p key={index}>{item}</p>
-            {index !== cities.length - 1 && (
-              <hr
-                style={{ borderWidth: ".5px", height: "auto", opacity: ".28" }}
-                className="ms-2 me-2"
-              />
-            )}
-          </>
-        ))}
+      <div className="mt-4 flex" style={{ opacity: "0.8" }}>
+        <div className=" inline-block">
+          <h1 className="inline-block font-semibold me-3">CONTACT US:</h1>
+        </div>
+        <div className="flex flex-wrap">
+          {cities.map((item, index) => (
+            <>
+              <p key={index}>{item}</p>
+              {index !== cities.length - 1 && (
+                <hr
+                  style={{
+                    borderWidth: ".5px",
+                    height: "auto",
+                    opacity: ".28",
+                  }}
+                  className="ms-2 me-2"
+                />
+              )}
+            </>
+          ))}
+        </div>
       </div>
-      <div className="flex mt-4  container mx-auto">
+      <div className="grid grid-cols-2 justify-center md:flex mt-4 ">
         {options.map((item, index) => (
-          <p
-            key={index}
-            className="me-8 font-semibold"
-            style={{ opacity: ".8" }}
-          >
-            {item}
-          </p>
+          <div className="">
+            <p
+              key={index}
+              className="me-8 font-semibold inline-block"
+              style={{ opacity: ".8" }}
+            >
+              {item}
+            </p>
+          </div>
         ))}
       </div>
     </footer>
-  )
+  );
 }
