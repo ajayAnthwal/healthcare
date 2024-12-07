@@ -3,10 +3,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Button, Heading } from "@medusajs/ui";
 import banner from "../assets/images/homepage/banner.svg";
 import whyChooseUs1 from "../assets/images/homepage/whyChooseUs1.png";
-import whatsappSvg from "../assets/images/homepage/whatsapp.svg";
 import chevronLeft from "../assets/images/homepage/chevron-left.svg";
 import chevronRight from "../assets/images/homepage/chevron-right.svg";
-import calendar from "../assets/images/homepage/calendar.svg";
 import ourMission from "../assets/images/homepage/ourMission.svg";
 import ourTeam from "../assets/images/homepage/ourTeam.svg";
 import ourVision from "../assets/images/homepage/ourVision.svg";
@@ -22,52 +20,12 @@ import star from "@/assets/images/homepage/star.png";
 
 import Image from "next/image";
 import { useState } from "react";
+import ComprehensiveServices from "@/components/ComprehensiveServices";
+import Homecare from "@/components/Homecare";
 
 const Home = () => {
   const [currentTestimony, setCurrentTestimony] = useState(0);
   const options = ["Home", "Long term care", "Book", "Buy/Rent Equipments"];
-  const services = [
-    {
-      title: "Nurse at Home",
-      image: require("../assets/images/homepage/nurseAtHome.png"),
-    },
-    {
-      title: "Long Term Assisted Care",
-      image: require("../assets/images/homepage/longTermCare.png"),
-    },
-    {
-      title: "Rehab Packages",
-      image: require("../assets/images/homepage/rehab.png"),
-    },
-    {
-      title: "Mother & Baby Care",
-      image: require("../assets/images/homepage/motherBabyCare.png"),
-    },
-    {
-      title: "Elder Care",
-      image: require("../assets/images/homepage/elderCare.png"),
-    },
-    {
-      title: "ICU Setup at Home",
-      image: require("../assets/images/homepage/icuSetup.png"),
-    },
-    {
-      title: "Doctors/ Nurses/ Physiotherapists Vists at Home",
-      image: require("../assets/images/homepage/doctorsNurses.png"),
-    },
-    {
-      title: "Medical Procedures at Home",
-      image: require("../assets/images/homepage/medicalProcedures.png"),
-    },
-    {
-      title: "Vaccinations at Home",
-      image: require("../assets/images/homepage/vaccinationAtHome.png"),
-    },
-    {
-      title: "Diagnostic Services",
-      image: require("../assets/images/homepage/diagnosticServices.png"),
-    },
-  ];
   const abouts = [
     {
       image: ourMission,
@@ -129,76 +87,14 @@ const Home = () => {
     <div>
       <Image src={banner} alt="banner" className="w-full z-1" />
       <div className="flex flex-col items-center mt-5 container w-full mx-auto px-4">
-        <h1
-          className="text-4xl font-semibold my-4 text-[#031432]"
-          style={{ fontFamily: "Poppins", lineHeight: "48px" }}
-        >
-          Our Comprehensive Services
-        </h1>
-        <p className="text-[#6C87AE] w-full sm:w-3/4 md:w-1/2 text-center text-lg">
-          Explore a range of healthcare services tailored to meet your needs. At
-          Apollo Homecare, we provide flexible, high-quality support designed
-          for every stage of life and wellness.
-        </p>
-      </div>
-      <div className="flex flex-wrap my-5 w-full container mx-auto gap-5">
-        <div className="md:hidden overflow-x-auto">
-          <div className="flex w-max">
-            {services.slice(0, 6).map((service, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-32 p-2 services_cards"
-              >
-                <Card title={service?.title} image={service?.image} />
-              </div>
-            ))}
-          </div>
-
-          <div className="flex mt-5 w-max">
-            {services.slice(6, 12).map((service, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-32 p-2 services_cards"
-              >
-                <Card title={service?.title} image={service?.image} />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop View */}
-        <div className="hidden md:flex flex-wrap justify-center gap-5">
-          {services.map((item) => (
-            <div key={item.title} className="m-5">
-              <Card title={item.title} image={item.image} />
-            </div>
-          ))}
-        </div>
+        <ComprehensiveServices />
       </div>
       <div className="container mx-auto flex">
         <Image src={healthcare} alt="banner" className="w-[100%]" />
       </div>
       {/* ---------------Homecare Section---------------- */}
-      <div className="py-16 px-4 my-20 card rounded-[32px] text-white text-center bg-gradient-to-r from-[#1AE2E9] via-[#019196] to-[#03676A] shadow-lg  container mx-auto">
-        <h1 className="text-2xl font-semibold mb-4">
-          Why is Homecare Important These Days?
-        </h1>
-        <p className="text-sm opacity-80 w-[676px] text-center mx-auto">
-          In today’s fast-paced world, the importance of receiving medical care
-          at home has never been greater. Homecare offers a comfortable, safe,
-          and personalized approach to healthcare, providing support for
-          recovery, chronic conditions, and general wellness without the need
-          for frequent hospital visits.
-        </p>
-        <div className="flex justify-center items-center mt-5">
-          <Button className="mr-10 px-5 py-2 rounded-[32px] bg-[#009A9F] text-white flex justify-center items-center">
-            <Image src={calendar} alt="calendar" />
-            Schedule
-          </Button>
-          <Button className="px-5 py-2 rounded-[32px] bg-white text-[#009A9F] flex justify-center items-center">
-            <Image src={whatsappSvg} alt="whatsapp" /> Book Now
-          </Button>
-        </div>
+      <div>
+        <Homecare />
       </div>
       {/* ---------------Why Choose Us Section---------------- */}
       <div className="mt-20 flex flex-col items-center container mx-auto px-4">
@@ -429,50 +325,4 @@ const Home = () => {
     </div>
   );
 };
-
-const Card = (props) => {
-  return (
-    <div
-      className="bg-white flex items-center p-5"
-      style={{
-        flexDirection: "column",
-        boxShadow: "0px 4px 18.3px 0px rgba(0, 0, 0, 0.25)",
-        borderRadius: "20px",
-        maxWidth: "100%",
-        height: "auto",
-      }}
-    >
-      <p
-        className="mb-2"
-        style={{
-          fontWeight: "500",
-          width: "10rem",
-          height: "5rem",
-          textAlign: "center",
-          fontSize: "1.2rem",
-        }}
-      >
-        {props?.title}
-      </p>
-      <Image
-        src={props?.image}
-        alt={props?.title}
-        style={{ width: "6rem", height: "6rem", borderRadius: "9rem" }}
-      />
-      <Button
-        className="flex mt-4 ps-5 pe-5 items-center custom-button"
-        style={{
-          color: "#009A9F",
-          backgroundColor: "white",
-          borderRadius: "50px",
-          borderColor: "#009A9F",
-        }}
-      >
-        <Image src={whatsappSvg} alt="whatsapp" height={15} width={15} />
-        Enquire Now
-      </Button>
-    </div>
-  );
-};
-
 export default Home;
