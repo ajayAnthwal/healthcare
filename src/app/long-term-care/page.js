@@ -31,18 +31,25 @@ const LongTermCare = () => {
         <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
           <Tabs tabsData={tabsData} />
           <TabPanels>
-            {/* Only render content when a tab is clicked */}
-            <TabPanel>{selectedIndex === 0 && <div>Content for Tab 1</div>}</TabPanel>
-            <TabPanel>{selectedIndex === 1 && <NurseAtHome />}</TabPanel>
-            <TabPanel>{selectedIndex === 2 && <div>Content for Tab 2</div>}</TabPanel>
-            <TabPanel>{selectedIndex === 3 && <div>Content for Tab 3</div>}</TabPanel>
-            <TabPanel>{selectedIndex === 4 && <div>Content for Tab 4</div>}</TabPanel>
-            <TabPanel>{selectedIndex === 5 && <div>Content for Tab 5</div>}</TabPanel>
+            <TabPanel>{selectedIndex === 0 && <NurseAtHome />}</TabPanel>
+            <TabPanel>
+              {selectedIndex === 1 && <div>Content for Tab 1</div>}
+            </TabPanel>
+            <TabPanel>
+              {selectedIndex === 2 && <div>Content for Tab 2</div>}
+            </TabPanel>
+            <TabPanel>
+              {selectedIndex === 3 && <div>Content for Tab 3</div>}
+            </TabPanel>
+            <TabPanel>
+              {selectedIndex === 4 && <div>Content for Tab 4</div>}
+            </TabPanel>
+            <TabPanel>
+              {selectedIndex === 5 && <div>Content for Tab 5</div>}
+            </TabPanel>
           </TabPanels>
         </TabGroup>
       </div>
-
-      {/* Conditionally render these components only when no tab is clicked */}
       {selectedIndex === -1 && (
         <>
           <EnquireForm />
