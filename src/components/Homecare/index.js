@@ -7,11 +7,9 @@ import Image from "next/image";
 const Homecare = () => {
   return (
     <div
-      className="bg-gradient-to-linear-gradient(118.43deg, #1AE2E9 -5.9%, #019196 42.54%, #03676A 90.98%);
-"
-    >
+      className="mx-2 md:mx-0 bg-gradient-to-linear-gradient(118.43deg, #1AE2E9 -5.9%, #019196 42.54%, #03676A 90.98%) overflow-x-hidden">
       {/* ---------------Homecare Section---------------- */}
-      <div className="py-16 px-4 my-20 card rounded-[32px] text-white text-center bg-gradient-to-r from-[#1AE2E9] via-[#019196] to-[#03676A] shadow-lg  container mx-auto ">
+      <div className="py-16 px-4 my-20 card rounded-[32px] text-white text-center bg-gradient-to-r from-[#1AE2E9] via-[#019196] to-[#03676A] shadow-lg ">
         <h1 className="text-2xl font-semibold mb-4">
           Why is Homecare Important These Days?
         </h1>
