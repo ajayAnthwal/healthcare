@@ -64,7 +64,7 @@ export default async function Footer() {
               {/* <div key={index} style={{ width: "12.5rem" }}> */}
               <div
                 key={index}
-                className="border-none md:border-r px-4 border-gray-400"
+                className="md:border-r px-4 border-gray-500 flex-1 md:last:border-none"
               >
                 <h4 className="font-semibold">{item.title}</h4>
                 <div className="mt-3">
@@ -200,7 +200,7 @@ export default async function Footer() {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-2 justify-center md:flex mt-4 ">
+      <div className="grid grid-cols-2 justify-center md:flex md:justify-start mt-4 ">
         {options.map((item, index) => (
           <div className="">
             <p
