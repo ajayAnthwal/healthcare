@@ -1,4 +1,4 @@
-import { Button, Text, clx } from "@medusajs/ui"
+import { Button, Text, clx } from "@medusajs/ui";
 
 export default async function Footer() {
   const items = [
@@ -31,7 +31,7 @@ export default async function Footer() {
       title: "News & Media",
       options: ["Press Releases", "Gallery", "Journals", "Blogs", "Campaigns"],
     },
-  ]
+  ];
   const cities = [
     "HYDERABAD",
     "KOLKATA",
@@ -43,14 +43,14 @@ export default async function Footer() {
     "INDORE",
     "MUMBAI",
     "GUWAHATI",
-  ]
+  ];
 
   const options = [
     "Terms & Conditions",
     "Privacy Policy",
     "Refund Policy",
     "Patient Charter",
-  ]
+  ];
   return (
     <footer
       className="w-full p-4 pt-10 mt-5"
@@ -216,3 +216,93 @@ export default async function Footer() {
     </footer>
   );
 }
+
+const MobileFooter = () => {
+  return (
+    <footer className="bg-dark text-white py-6 px-4 sm:hidden">
+      {" "}
+      {/* Only visible on mobile */}
+      <div className="grid grid-cols-2 gap-4 text-sm">
+        {/* About Section */}
+        <div>
+          <h3 className="font-semibold mb-2">About</h3>
+          <ul className="space-y-1">
+            <li>Legacy</li>
+            <li>Leadership</li>
+            <li>Vision</li>
+            <li>Our Pillars</li>
+            <li>Awards</li>
+          </ul>
+        </div>
+
+        {/* Our Services Section */}
+        <div>
+          <h3 className="font-semibold mb-2">Our Services</h3>
+          <ul className="space-y-1">
+            <li>Long term care</li>
+            <li>Booking services</li>
+            <li>Buy/rent equipment</li>
+          </ul>
+        </div>
+
+        {/* Homecare for Corporates Section */}
+        <div>
+          <h3 className="font-semibold mb-2">Homecare for corporates</h3>
+          <ul className="space-y-1">
+            <li>B2B company packages</li>
+          </ul>
+        </div>
+
+        {/* Careers Section */}
+        <div>
+          <h3 className="font-semibold mb-2">Careers</h3>
+          <ul className="space-y-1">
+            <li>Current Opportunities</li>
+            <li>Career in Homecare</li>
+            <li>Life at Apollo HomeCare</li>
+            <li>Hiring Process</li>
+          </ul>
+        </div>
+
+        {/* Refer a Patient Section */}
+        <div>
+          <h3 className="font-semibold mb-2">Refer a Patient</h3>
+          <ul className="space-y-1">
+            <li>Patient referrals for doctors</li>
+          </ul>
+        </div>
+
+        {/* News & Media Section */}
+        <div>
+          <h3 className="font-semibold mb-2">News & Media</h3>
+          <ul className="space-y-1">
+            <li>Press releases</li>
+            <li>Gallery</li>
+            <li>Journals</li>
+            <li>Blogs</li>
+            <li>Campaigns</li>
+          </ul>
+        </div>
+      </div>
+      {/* Buttons */}
+      <div className="mt-6 space-y-4">
+        <button className="w-full bg-orange-500 text-white py-2 rounded">
+          Share a Feedback
+        </button>
+        <button className="w-full bg-yellow-500 text-white py-2 rounded">
+          Download Booklet
+        </button>
+        <button className="w-full bg-red-500 text-white py-2 rounded">
+          I Need Consultation
+        </button>
+      </div>
+      {/* Social Icons */}
+      <div className="flex justify-center space-x-4 mt-6 text-lg">
+        <i className="fab fa-facebook"></i>
+        <i className="fab fa-twitter"></i>
+        <i className="fab fa-instagram"></i>
+        <i className="fab fa-youtube"></i>
+      </div>
+    </footer>
+  );
+};
