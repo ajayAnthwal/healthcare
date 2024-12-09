@@ -6,10 +6,7 @@ import Image from "next/image";
 
 const Homecare = () => {
   return (
-    <div
-      className="bg-gradient-to-linear-gradient(118.43deg, #1AE2E9 -5.9%, #019196 42.54%, #03676A 90.98%);
-"
-    >
+    <div>
       {/* ---------------Homecare Section---------------- */}
       <div className="py-16 px-4 my-20 card rounded-[32px] text-white text-center bg-gradient-to-r from-[#1AE2E9] via-[#019196] to-[#03676A] shadow-lg container mx-auto">
         <h1 className="text-[32px] font-semibold leading-[48px] text-center mb-4">
