@@ -2,11 +2,9 @@
 
 import { useState } from "react";
 import nurseAtHome from "@/assets/images/homepage/nurseAtHome.png";
-
 import longTermCare from "@/assets/images/homepage/longTermCare.png";
 import rehab from "@/assets/images/homepage/rehab.png";
 import motherBabyCare from "@/assets/images/homepage/motherBabyCare.png";
-
 import elderCare from "@/assets/images/homepage/elderCare.png";
 import icuSetup from "@/assets/images/homepage/icuSetup.png";
 import doctorsNurses from "@/assets/images/homepage/doctorsNurses.png";
@@ -16,7 +14,6 @@ import diagnosticServices from "@/assets/images/homepage/diagnosticServices.png"
 import { Card } from "../Card";
 
 const ComprehensiveServices = () => {
-  const [currentTestimony, setCurrentTestimony] = useState(0);
   const services = [
     {
       title: "Nurse at Home",
@@ -43,7 +40,7 @@ const ComprehensiveServices = () => {
       image: icuSetup,
     },
     {
-      title: "Doctors/ Nurses/ Physiotherapists Vists at Home",
+      title: "Doctors/ Nurses/ Physiotherapists Visits at Home",
       image: doctorsNurses,
     },
     {
@@ -80,36 +77,24 @@ const ComprehensiveServices = () => {
           for every stage of life and wellness.
         </p>
       </div>
-      <div className="flex flex-wrap mt-[34px] mb-[100px] w-full container mx-auto gap-5">
-        <div className="md:hidden overflow-x-auto">
-          <div className="flex w-max">
-            {services.slice(0, 6).map((service, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0  p-2 services_cards"
-              >
-                <Card title={service?.title} image={service?.image} />
-              </div>
-            ))}
-          </div>
-
-          <div className="flex mt-5 w-max">
-            {services.slice(6, 12).map((service, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-32 p-2 services_cards"
-              >
-                <Card title={service?.title} image={service?.image} />
-              </div>
-            ))}
-          </div>
+      <div className="w-full container mx-auto mb-[100px]">
+        {/* Mobile View */}
+        <div className="md:hidden flex flex-wrap gap-4">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-[calc(50%-8px)] sm:w-[calc(33.33%-8px)] p-2"
+            >
+              <Card title={service.title} image={service.image} />
+            </div>
+          ))}
         </div>
 
         {/* Desktop View */}
-        <div className="hidden md:flex flex-wrap justify-center gap-2">
-          {services.map((item) => (
-            <div key={item.title} className="w-[200px]">
-              <Card title={item.title} image={item.image} />
+        <div className="hidden md:grid grid-cols-6 gap-5">
+          {services.map((service, index) => (
+            <div key={index}>
+              <Card title={service.title} image={service.image} />
             </div>
           ))}
         </div>
