@@ -271,9 +271,9 @@ const Home = () => {
         </h1>
         <p className="mt-4 w-1/2 text-center text-[#6C87AE] text-[16px] font-[400] leading-[24px]">
           Stay updated with the latest news and media coverage about Apollo
-          Homecare. Our commitment to <br/> providing quality care has made us a
-          trusted name in the healthcare industry, and our recent <br/> achievements
-          are gaining attention.
+          Homecare. Our commitment to <br /> providing quality care has made us
+          a trusted name in the healthcare industry, and our recent <br />{" "}
+          achievements are gaining attention.
         </p>
 
         <div
