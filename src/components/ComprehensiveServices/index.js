@@ -64,57 +64,74 @@ const ComprehensiveServices = () => {
     },
   ];
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const itemsPerSlide = 6;
+
+  const handleNext = () => {
+    setCurrentSlide((prev) =>
+      prev < Math.ceil(services.length / itemsPerSlide) - 1 ? prev + 1 : 0
+    );
+  };
+
+  const handlePrev = () => {
+    setCurrentSlide((prev) =>
+      prev > 0 ? prev - 1 : Math.ceil(services.length / itemsPerSlide) - 1
+    );
+  };
+
+  const getVisibleItems = () => {
+    const start = currentSlide * itemsPerSlide;
+    const end = start + itemsPerSlide;
+    return services.slice(start, end);
+  };
+
   return (
     <div>
-      <div className="flex flex-col items-center mt-5 container w-full ">
-        <h1 className="text-[27px] md:text-[32px] font-semibold md:mb-5 text-[#031432] leading-[48px]">
-          Our Comprehensive Services
-        </h1>
-        <p className="hidden md:block text-[#6C87AE] w-full lg:w-[60%] text-center text-base">
-          Explore a range of healthcare services tailored to meet your needs. At
-          Apollo Homecare, we provide flexible, high-quality support designed
-          for every stage of life and wellness.
-        </p>
+    <div className="flex flex-col items-center mt-5 container w-full ">
+      <h1 className="text-[27px] md:text-[32px] font-semibold md:mb-5 text-[#031432] leading-[48px]">
+        Our Comprehensive Services
+      </h1>
+      <p className="hidden md:block text-[#6C87AE] w-full lg:w-[60%] text-center text-base">
+        Explore a range of healthcare services tailored to meet your needs.
+        At Apollo Homecare, we provide flexible, high-quality support designed
+        for every stage of life and wellness.
+      </p>
+    </div>
+
+    {/* Mobile Slider View */}
+    <div className="md:hidden overflow-hidden relative">
+      <div className="grid grid-cols-3 gap-1">
+        {getVisibleItems().map((service, index) => (
+          <div key={index} className="services_cards my-1">
+            <Card title={service?.title} image={service?.image} />
+          </div>
+        ))}
       </div>
-      <div className="flex flex-wrap mt-[10px] md:mt-[34px] mb-[100px] w-full container mx-auto gap-5">
-        <div className="md:hidden overflow-x-auto">
-          {/* <div className="flex w-max"> */}
-          <div className="grid grid-cols-3 gap-4 p-4">
-            {services.slice(0, 6).map((service, index) => (
-              <div key={index} className="flex-shrink-0  p-2 services_cards">
-              <div
-                key={index}
-                className="flex-shrink-0  services_cards"
-              >
-                <Card title={service?.title} image={service?.image} />
-              </div>
-              </div>
-            ))}
-          </div>
 
-          {/* <div className="flex mt-5 w-max"> */}
-          <div className="grid grid-cols-3 gap-4 p-4">
-            {services.slice(6, 12).map((service, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 services_cards"
-              >
-                <Card title={service?.title} image={service?.image} />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop View */}
-        <div className="hidden md:grid grid-cols-6 gap-5">
-          {services.map((service, index) => (
-            <div key={index}>
-              <Card title={service.title} image={service.image} />
-            </div>
-          ))}
-        </div>
+      {/* Navigation Buttons */}
+      <div className="flex justify-center gap-2 px-4 -translate-y-1/2 my-4">
+        <button
+          onClick={handlePrev}
+          className={` text-white rounded-full ${currentSlide==0 ? " px-4 bg-[#009a9f]" : "px-1 bg-gray-400" } py-1`}
+        >
+        </button>
+        <button
+          onClick={handleNext}
+          className={`text-white rounded-full py-1 ${currentSlide==1 ? " px-4 bg-[#009a9f]" : "px-1 bg-gray-400" }`}
+        >
+        </button>
       </div>
     </div>
+
+    {/* Desktop View */}
+    <div className="hidden md:grid grid-cols-6 gap-5">
+      {services.map((service, index) => (
+        <div key={index}>
+          <Card title={service.title} image={service.image} />
+        </div>
+      ))}
+    </div>
+  </div>
   );
 };
 

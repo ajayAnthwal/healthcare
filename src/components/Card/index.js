@@ -19,15 +19,16 @@ export const Card = (props) => {
           src={props?.image}
           alt={props?.title}
           className=" rounded-full"
-          // style={{ width: "6rem", height: "6rem", borderRadius: "9rem" }}
         />
       </div>
       <div className="flex justify-center">
-        <button className="flex items-center text-base font-semibold bg-white text-[#009A9F] border-[#009A9F] rounded-[50px] px-2 m-auto border py-2 absolute bottom-3 h-[23px] text-[11px]">
-          <Image src={whatsappSvg} alt="whatsapp" className="md:h-[15px] md:w-[15px] h-[8px] w-[8px]" />
-          <span>Enquire Now</span>
-        </button>
-      </div>
+  <button className="flex items-center gap-2 text-base font-semibold bg-white text-[#009A9F] border-[#009A9F] rounded-full px-4 py-4 m-auto border absolute bottom-3 h-[23px] text-[11px] md:text-sm md:h-[40px] md:px-6 md:py-3 md:gap-3">
+    <Image src={whatsappSvg} alt="whatsapp" className="h-[8px] w-[8px] md:h-[15px] md:w-[15px]" />
+    <span className="hidden md:inline">Enquire Now</span>
+    <span className="inline md:hidden">Enquire</span>
+  </button>
+</div>
+
     </div>
   );
 };
