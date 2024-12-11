@@ -1,8 +1,8 @@
 // Carousel.js
-import React, { useRef, useState, useEffect } from 'react';
-import EmblaCarouselReact from 'embla-carousel-react';
-import Image from 'next/image';
-import 'embla-carousel-react/embla-carousel.css';
+import React, { useRef, useState, useEffect } from "react";
+import EmblaCarouselReact from "embla-carousel-react";
+import Image from "next/image";
+import "embla-carousel-react/embla-carousel.css";
 
 const EmblaCarousel = ({ images }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -18,7 +18,10 @@ const EmblaCarousel = ({ images }) => {
   }, [emblaApi]);
 
   return (
-    <div className="relative w-full overflow-hidden mt-10" style={{ height: '40rem' }}>
+    <div
+      className="relative w-full overflow-hidden mt-10"
+      style={{ height: "40rem" }}
+    >
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
           {images.map((image, index) => (
@@ -35,31 +38,34 @@ const EmblaCarousel = ({ images }) => {
         </div>
       </div>
 
-      <div className="absolute flex items-center" style={{ bottom: '1rem', left: '48%' }}>
+      <div
+        className="absolute flex items-center"
+        style={{ bottom: "1rem", left: "48%" }}
+      >
         <div
           className="me-2"
           style={{
-            height: '0.8rem',
-            width: '0.8rem',
-            borderRadius: '100%',
-            backgroundColor: 'white',
+            height: "0.8rem",
+            width: "0.8rem",
+            borderRadius: "100%",
+            backgroundColor: "white",
           }}
         />
         <div
           className="me-2"
           style={{
-            height: '0.8rem',
-            width: '0.8rem',
-            borderRadius: '100%',
-            backgroundColor: 'white',
+            height: "0.8rem",
+            width: "0.8rem",
+            borderRadius: "100%",
+            backgroundColor: "white",
           }}
         />
         <div
           style={{
-            height: '1rem',
-            width: '1rem',
-            borderRadius: '100%',
-            backgroundColor: 'rgb(0, 113, 138)',
+            height: "1rem",
+            width: "1rem",
+            borderRadius: "100%",
+            backgroundColor: "rgb(0, 113, 138)",
           }}
         />
       </div>

@@ -4,12 +4,10 @@ import Doctor from "@/assets/images/longterm/Group.png";
 const Features = () => {
   return (
     <div className="container mx-auto mt-24 my-20">
-      {/* Heading */}
       <h1 className="text-center text-[32px] font-semibold leading-[48px] text-[#031432] mb-4">
-        What is Long Term Care & Why It's Required?
+        What is Long Term Care &amp; Why It&#39;s Required?
       </h1>
 
-      {/* Paragraph */}
       <p className="w-full sm:w-3/4 md:w-1/2 mt-4 text-center text-[#6C87AE] text-[16px] font-normal mx-auto leading-[24px]">
         Long-term care is designed to support individuals who require assistance
         with daily activities and medical needs over an extended period. It
@@ -17,9 +15,7 @@ const Features = () => {
         within the home environment.
       </p>
 
-      {/* Flexbox container for image and right side content */}
       <div className="flex gap-11 items-center justify-center mt-20">
-        {/* Image */}
         <div className="w-6/12">
           <Image
             src={Doctor}
@@ -30,9 +26,7 @@ const Features = () => {
           />
         </div>
 
-        {/* Right Side Content */}
         <div>
-          {/* Personalized Care */}
           <h2 className="text-[32px] font-semibold leading-[48px] text-[#031432] mb-4">
             Personalized Care
           </h2>
@@ -40,7 +34,6 @@ const Features = () => {
             Tailored to individual health conditions and preferences.
           </p>
 
-          {/* Emotional Support */}
           <h2 className="text-[32px] font-semibold leading-[48px] text-[#031432] mb-4">
             Emotional Support
           </h2>
@@ -48,7 +41,6 @@ const Features = () => {
             Promotes mental and emotional well-being through companionship.
           </p>
 
-          {/* Convenience at Home */}
           <h2 className="text-[32px] font-semibold leading-[48px] text-[#031432] mb-4">
             Convenience at Home
           </h2>
@@ -56,7 +48,6 @@ const Features = () => {
             No need for hospital stays; professional care comes to you.
           </p>
 
-          {/* Improved Quality of Life */}
           <h2 className="text-[32px] font-semibold leading-[48px] text-[#031432] mb-4">
             Improved Quality of Life
           </h2>

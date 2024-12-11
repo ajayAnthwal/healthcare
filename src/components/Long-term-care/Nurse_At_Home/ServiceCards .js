@@ -5,7 +5,6 @@ import heart from "@/assets/images/longterm/017-heart.png";
 import syringe from "@/assets/images/longterm/005-syringe.png";
 import neurology from "@/assets/images/longterm/neurology.png";
 
-// Sample card data
 const cardData = [
   {
     id: 1,
@@ -40,14 +39,12 @@ const ServiceCards = () => {
         Nursing Service
       </h1>
 
-      {/* Paragraph */}
       <p className="w-full sm:w-3/4 md:w-1/2 mt-4 text-center text-[#6C87AE] text-[16px] font-normal mx-auto leading-[24px]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam
       </p>
 
-      {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 container mx-auto">
         {cardData.map((card) => (
           <div

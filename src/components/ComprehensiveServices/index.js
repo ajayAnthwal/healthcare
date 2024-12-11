@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import nurseAtHome from "@/assets/images/homepage/nurseAtHome.png";
 import longTermCare from "@/assets/images/homepage/longTermCare.png";
@@ -56,11 +55,11 @@ const ComprehensiveServices = () => {
       image: diagnosticServices,
     },
     {
-      title: "Vaccinations at Home",
+      title: "Vaccinations at Home 2",
       image: vaccinationAtHome,
     },
     {
-      title: "Diagnostic Services",
+      title: "Diagnostic Services 2",
       image: diagnosticServices,
     },
   ];
@@ -82,6 +81,7 @@ const ComprehensiveServices = () => {
           {/* <div className="flex w-max"> */}
           <div className="grid grid-cols-3 gap-4 p-4">
             {services.slice(0, 6).map((service, index) => (
+              <div key={index} className="flex-shrink-0  p-2 services_cards">
               <div
                 key={index}
                 className="flex-shrink-0  services_cards"
