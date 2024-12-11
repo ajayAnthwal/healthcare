@@ -11,6 +11,7 @@ import subscriptions from "@/assets/images/longterm/subscriptions.svg";
 import Vector from "@/assets/images/longterm/Vector.svg";
 import Vector_second from "@/assets/images/longterm/Vector_second.svg";
 import Services from "@/components/Book/Services";
+import NurseAtHome from "@/components/Long-term-care/Nurse_At_Home/NurseAtHome";
 
 const Book = () => {
   const [selectedIndex, setSelectedIndex] = useState(-1);

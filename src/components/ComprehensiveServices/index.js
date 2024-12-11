@@ -1,12 +1,9 @@
 "use client";
-
 import { useState } from "react";
 import nurseAtHome from "@/assets/images/homepage/nurseAtHome.png";
-
 import longTermCare from "@/assets/images/homepage/longTermCare.png";
 import rehab from "@/assets/images/homepage/rehab.png";
 import motherBabyCare from "@/assets/images/homepage/motherBabyCare.png";
-
 import elderCare from "@/assets/images/homepage/elderCare.png";
 import icuSetup from "@/assets/images/homepage/icuSetup.png";
 import doctorsNurses from "@/assets/images/homepage/doctorsNurses.png";
@@ -59,11 +56,11 @@ const ComprehensiveServices = () => {
       image: diagnosticServices,
     },
     {
-      title: "Vaccinations at Home",
+      title: "Vaccinations at Home 2",
       image: vaccinationAtHome,
     },
     {
-      title: "Diagnostic Services",
+      title: "Diagnostic Services 2",
       image: diagnosticServices,
     },
   ];
@@ -84,10 +81,7 @@ const ComprehensiveServices = () => {
         <div className="md:hidden overflow-x-auto">
           <div className="flex w-max">
             {services.slice(0, 6).map((service, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0  p-2 services_cards"
-              >
+              <div key={index} className="flex-shrink-0  p-2 services_cards">
                 <Card title={service?.title} image={service?.image} />
               </div>
             ))}

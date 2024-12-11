@@ -4,10 +4,7 @@ import Image from "next/image";
 const Book_Service = ({ title, imageSrc, description }) => {
   return (
     <div className="border-r border-black pr-4 flex flex-col items-center text-center gap-4">
-      {/* Title (on top) */}
       <h3 className="text-[20px] font-semibold leading-[24px]">{title}</h3>
-
-      {/* Image */}
       <div className="rounded-[20px] overflow-hidden">
         <Image
           src={imageSrc}
@@ -17,8 +14,6 @@ const Book_Service = ({ title, imageSrc, description }) => {
           className="rounded-[20px]"
         />
       </div>
-
-      {/* Description (below image) */}
       <p className="text-[18px] font-normal leading-[21.6px]">{description}</p>
     </div>
   );

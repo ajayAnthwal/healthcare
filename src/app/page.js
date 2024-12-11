@@ -1,31 +1,55 @@
 "use client";
 import useEmblaCarousel from "embla-carousel-react";
+import { useEffect, useState } from "react";
 import { Button, Heading } from "@medusajs/ui";
-import banner from "../assets/images/homepage/banner.svg";
-import whyChooseUs1 from "../assets/images/homepage/whyChooseUs1.png";
-import chevronLeft from "../assets/images/homepage/chevron-left.svg";
-import chevronRight from "../assets/images/homepage/chevron-right.svg";
-import ourMission from "../assets/images/homepage/ourMission.svg";
-import ourTeam from "../assets/images/homepage/ourTeam.svg";
-import ourVision from "../assets/images/homepage/ourVision.svg";
-import ourApproach from "../assets/images/homepage/ourApproach.svg";
-import testimonial1 from "../assets/images/homepage/testimonial1.png";
-import testimonial2 from "../assets/images/homepage/testimonial2.png";
-import mediaCoverage from "../assets/images/homepage/mediaCoverage.png";
+
+// Import images with consistent paths
+import banner from "@/assets/images/homepage/banner.svg";
+import chevronLeft from "@/assets/images/homepage/chevron-left.svg";
+import chevronRight from "@/assets/images/homepage/chevron-right.svg";
+import whyChooseUs1 from "@/assets/images/homepage/whyChooseUs1.png";
+import ourMission from "@/assets/images/homepage/ourMission.svg";
+import ourTeam from "@/assets/images/homepage/ourTeam.svg";
+import ourVision from "@/assets/images/homepage/ourVision.svg";
+import ourApproach from "@/assets/images/homepage/ourApproach.svg";
+import testimonial1 from "@/assets/images/homepage/testimonial1.png";
+import testimonial2 from "@/assets/images/homepage/testimonial2.png";
+import mediaCoverage from "@/assets/images/homepage/mediaCoverage.png";
 import healthcare from "@/assets/images/homepage/healthcare.png";
 import stethoscope_arrow from "@/assets/images/homepage/stethoscope_arrow.png";
 import relax from "@/assets/images/homepage/relax.png";
 import emoji_people from "@/assets/images/homepage/emoji_people.png";
-import star from "@/assets/images/homepage/star.png";
+import star from "@/assets/images/homepage/star.svg";
 
+// Animation assets
+import arrows from "@/assets/images/homepage/animation1/arrows.png";
+import doctorNurse from "@/assets/images/homepage/animation1/doctorNurse.png";
+import dots from "@/assets/images/homepage/animation1/dots.png";
+import ellipse from "@/assets/images/homepage/animation1/ellipse.png";
+import spiral from "@/assets/images/homepage/animation1/spiral.png";
+import textContent from "@/assets/images/homepage/animation1/textContent.png";
+import ball from "@/assets/images/homepage/animation2/ball.png";
+import doctors from "@/assets/images/homepage/animation2/doctors.png";
+import textContent2 from "@/assets/images/homepage/animation2/textContent.png";
+import wheelchair from "@/assets/images/homepage/animation3/wheelchair.png";
+import hand from "@/assets/images/homepage/animation3/hand.png";
+import textContent3 from "@/assets/images/homepage/animation3/textContent.png";
 import Image from "next/image";
-import { useState } from "react";
 import ComprehensiveServices from "@/components/ComprehensiveServices";
-import Homecare from "@/components/Homecare";
+import Homemade from "@/components/Homecare";
 
 const Home = () => {
   const [currentTestimony, setCurrentTestimony] = useState(0);
-  const options = ["Home", "Long term care", "Book", "Buy/Rent Equipments"];
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      console.log("changing index " + index);
+      setIndex(index == 0 ? 1 : index == 1 ? 2 : 0);
+    }, 4000);
+    return () => clearInterval(intervalId);
+  }, [index]);
+
   const abouts = [
     {
       image: ourMission,
@@ -83,9 +107,189 @@ const Home = () => {
     },
   ];
 
+  const sliderContent = [
+    {
+      title: "Welcome to Our Service",
+      description:
+        "We offer the best healthcare solutions for you and your family.",
+      buttonText: "Learn More",
+    },
+    {
+      title: "Meet Our Doctors",
+      description: "Our team of experts is here to provide exceptional care.",
+      buttonText: "Meet the Team",
+    },
+    {
+      title: "Accessibility for Everyone",
+      description: "We ensure accessible healthcare services for everyone.",
+      buttonText: "Contact Us",
+    },
+  ];
+
   return (
     <div>
-      <Image src={banner} alt="banner" className="w-full z-1" />
+      <div
+        style={{
+          width: "100%",
+          overflow: "hidden",
+          height: "40rem",
+          backgroundColor: "#e6f5f5",
+        }}
+        className="relative"
+      >
+        <Image
+          alt=""
+          src={dots}
+          style={{
+            transitionDuration: "2s",
+            width: index == 0 ? "3rem" : "0rem",
+            top: index == 0 ? "10rem" : "0rem",
+            right: index == 0 ? "7rem" : "0rem",
+            position: "absolute",
+          }}
+        />
+        <Image
+          alt=""
+          src={arrows}
+          style={{
+            transitionDuration: "2s",
+            width: index == 0 ? "5rem" : "0rem",
+            top: index == 0 ? "13.5rem" : "0rem",
+            right: index == 0 ? "22.5rem" : "0rem",
+            position: "absolute",
+          }}
+        />
+        <Image
+          alt=""
+          src={ellipse}
+          style={{
+            width: index == 0 ? "40rem" : "0rem",
+            bottom: 0,
+            right: 0,
+            position: "absolute",
+          }}
+        />
+        <Image
+          alt=""
+          src={spiral}
+          style={{
+            transitionDuration: "2s",
+            width: index == 0 || index == 1 ? "5rem" : "0rem",
+            visibility: index == 0 || index == 1 ? "visible" : "hidden",
+            top: index == 0 ? "23.5rem" : "20.3rem",
+            right: index == 0 ? "30.5rem" : index == 1 ? "38rem" : "0rem",
+            transform: index == 1 ? "rotate(90deg)" : "",
+            position: "absolute",
+          }}
+        />
+        <Image
+          alt=""
+          src={doctorNurse}
+          style={{
+            transitionDuration: "1s",
+            width: index == 0 ? "30rem" : "0rem",
+            bottom: 0,
+            right: "2rem",
+            position: "absolute",
+          }}
+        />
+        <Image
+          alt=""
+          src={
+            index == 0 ? textContent : index == 1 ? textContent2 : textContent3
+          }
+          style={{
+            transitionDuration: "2s",
+            width: "40rem",
+            top: "15.5rem",
+            left: index == 1 || index == 0 ? "12.55%" : "55%",
+            position: "absolute",
+          }}
+        />
+        <Image
+          alt=""
+          src={index == 1 ? doctors : wheelchair}
+          style={{
+            transitionDuration: "2s",
+            width: index == 1 || index == 2 ? "35rem" : "0rem",
+            visibility: index == 1 || index == 2 ? "visible" : "hidden",
+            top: "3.5rem",
+            right: index == 1 ? "10.5%" : index == 2 ? "55%" : "0rem",
+            position: "absolute",
+          }}
+        />
+        <Image
+          alt=""
+          src={hand}
+          style={{
+            transitionDuration: "2s",
+            width: index == 2 ? "15rem" : "0rem",
+            visibility: index == 2 ? "visible" : "hidden",
+            top: "3.5rem",
+            right: index == 2 ? "45%" : "0rem",
+            position: "absolute",
+          }}
+        />
+        <Image
+          alt=""
+          src={ball}
+          style={{
+            transitionDuration: "2s",
+            width: index == 1 ? "5rem" : "0rem",
+            visibility: index == 1 ? "visible" : "hidden",
+            bottom: "3.5rem",
+            right: index == 1 ? "16%" : "0rem",
+            position: "absolute",
+          }}
+        />
+        <Image
+          alt=""
+          src={ball}
+          style={{
+            transitionDuration: "2s",
+            width: index == 1 ? "2.5rem" : "0rem",
+            visibility: index == 1 ? "visible" : "hidden",
+            bottom: "10.5rem",
+            right: index == 1 ? "13%" : "0rem",
+            position: "absolute",
+          }}
+        />
+        <div
+          className="absolute flex items-center"
+          style={{ bottom: "1rem", left: "48%" }}
+        >
+          <div
+            className="me-2"
+            onClick={() => setIndex(0)}
+            style={{
+              height: index == 0 ? "1rem" : "0.8rem",
+              width: index == 0 ? "1rem" : "0.8rem",
+              borderRadius: "100%",
+              backgroundColor: index == 0 ? "#00718a" : "white",
+            }}
+          />
+          <div
+            className="me-2"
+            onClick={() => setIndex(1)}
+            style={{
+              height: index == 1 ? "1rem" : "0.8rem",
+              width: index == 1 ? "1rem" : "0.8rem",
+              borderRadius: "100%",
+              backgroundColor: index == 1 ? "#00718a" : "white",
+            }}
+          />
+          <div
+            onClick={() => setIndex(2)}
+            style={{
+              height: index == 2 ? "1rem" : "0.8rem",
+              width: index == 2 ? "1rem" : "0.8rem",
+              borderRadius: "100%",
+              backgroundColor: index == 2 ? "#00718a" : "white",
+            }}
+          />
+        </div>
+      </div>
+
       <div className="flex flex-col items-center mt-5 container w-full mx-auto px-4">
         <ComprehensiveServices />
       </div>
@@ -94,7 +298,7 @@ const Home = () => {
       </div>
       {/* ---------------Homecare Section---------------- */}
       <div>
-        <Homecare />
+        <Homemade />
       </div>
       {/* ---------------Why Choose Us Section---------------- */}
       <div className="mt-20 flex flex-col items-center container mx-auto px-4">

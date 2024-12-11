@@ -6,7 +6,7 @@ import bgImage from "@/assets/images/login/background.png";
 
 const Login = () => {
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center py-24 px-4 sm:px-6 md:px-8">
       <Image
         src={bgImage}
         alt="Background"
@@ -16,15 +16,15 @@ const Login = () => {
         className="-z-10"
       />
 
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10 p-4 relative z-10">
-        <div className="flex-1 flex justify-center">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-6 p-4 relative z-10">
+        <div className=" flex justify-center">
           <Image
             src={loginBanner}
             alt="Doctors Illustration"
-            className="w-full"
             priority
-            width={759}
-            height={431}
+            width={702}
+            height={410}
+            className="max-w-full h-auto"
           />
         </div>
 
@@ -32,17 +32,21 @@ const Login = () => {
           className="flex-1 p-8 text-white bg-gradient-to-r from-[#1AE2E9] to-[#03676A] 
           border border-solid 
           border-image-[linear-gradient(108.87deg,_rgba(255,_255,_255,_0.8)_0.66%,_rgba(211,_211,_211,_0.1)_99.48%)] 
-          backdrop-blur-[28px] rounded-lg max-w-[479px] h-[497px]"
+          backdrop-blur-[28px] rounded-[27px] max-w-[479px] h-[497px] w-full sm:w-[90%] md:w-[479px]"
           style={{
             background:
               "linear-gradient(118.43deg, #1AE2E9 -5.9%, #019196 42.54%, #03676A 90.98%)",
           }}
         >
-          <h1 className="text-[40px] font-normal leading-[48.76px] mb-4 text-left">
+          <h1
+            className="text-[40px] font-normal leading-[48.76px] mb-4 text-left text-white"
+            style={{ fontFamily: '"Montserrat Subrayada", sans-serif' }}
+          >
             LOGIN
           </h1>
-          <div className="w-[110px] h-[1px] bg-white mb-6"></div>
-          <p className="text-[20px] font-light leading-[30px] mb-6 text-left">
+
+          <div className="w-[110px] h-[1px] bg-white -mt-5"></div>
+          <p className="text-[20px] font-light mb-6 text-left text-white mt-2">
             Welcome to Apollo Healthcare
           </p>
 
@@ -50,36 +54,46 @@ const Login = () => {
             <div className="my-7">
               <label
                 htmlFor="mobile"
-                className="block text-[15px] font-normal leading-[22.5px] mb-2 text-left"
+                className="text-[15px] font-normal mb-2 text-left text-white"
               >
                 Mobile Number
               </label>
+
               <input
                 id="mobile"
                 type="text"
                 placeholder="Enter your Mobile Number"
-                className="w-[419px] h-[47px] p-[12px_10px] bg-transparent border border-[#FFFFFFCC] border-solid rounded-[10px] text-white border-image-[linear-gradient(108.87deg,_rgba(255,_255,_255,_0.8)_0.66%,_rgba(211,_211,_211,_0.1)_99.48%)] border-image-slice-1 backdrop-blur-[60px] placeholder:text-white placeholder:text-[15px] placeholder:font-light placeholder:leading-[22.5px]"
+                className="w-full sm:w-[419px] h-[47px] p-[12px_10px] bg-transparent border-[#FFFFFFCC] rounded-[10px] text-white opacity-60 placeholder:text-white placeholder:text-[15px] placeholder:font-light placeholder:leading-[22.5px] backdrop-blur-[30px] border-[1px] border-solid"
+                style={{
+                  background:
+                    "linear-gradient(109deg, rgba(201, 201, 201, 0.80) 1.57%, rgba(196, 196, 196, 0.10) 100%)",
+                }}
               />
             </div>
 
             <div className="my-7">
               <label
                 htmlFor="otp"
-                className="block text-[15px] font-normal leading-[22.5px] mb-2 text-left"
+                className="text-[15px] font-normal mb-2 text-left text-white"
               >
                 OTP
               </label>
+
               <input
                 id="otp"
                 type="text"
                 placeholder="123456"
-                className="w-[419px] h-[47px] p-[12px_10px] bg-transparent border border-[#FFFFFFCC] border-solid rounded-[10px] text-white border-image-[linear-gradient(108.87deg,_rgba(255,_255,_255,_0.8)_0.66%,_rgba(211,_211,_211,_0.1)_99.48%)] border-image-slice-1 backdrop-blur-[60px] placeholder:text-white placeholder:text-[15px] placeholder:font-light placeholder:leading-[22.5px]"
+                className="w-full sm:w-[419px] h-[47px] p-[12px_10px] bg-transparent border-[#FFFFFFCC] rounded-[10px] text-white opacity-60 placeholder:text-white placeholder:text-[15px] placeholder:font-light placeholder:leading-[22.5px] backdrop-blur-[30px] border-[1px] border-solid"
+                style={{
+                  background:
+                    "linear-gradient(109deg, rgba(201, 201, 201, 0.80) 1.57%, rgba(196, 196, 196, 0.10) 100%)",
+                }}
               />
             </div>
 
             <button
               type="submit"
-              className="h-[50px] mb-4 mt-4 px-[184px] py-[11px] bg-[#B0E0E1] hover:bg-[#96C8C9] text-black text-lg font-semibold rounded-[10px] transition-all"
+              className="mt-14 flex justify-center items-center w-full sm:w-[419px] h-[50px] px-6 py-2 bg-[#B0E0E1] hover:bg-[#96C8C9] text-black text-lg font-semibold rounded-[10px] gap-[10px] transition-all duration-300 ease-in-out flex-shrink-0 mb-4"
             >
               LOGIN
             </button>

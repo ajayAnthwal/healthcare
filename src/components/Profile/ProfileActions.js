@@ -1,53 +1,65 @@
 import React from "react";
-
+import Purchases from "@/assets/images/profile/avatar.svg";
+import Subscription from "@/assets/images/profile/avatar-1.svg";
+import Health from "@/assets/images/profile/avatar-2.svg";
+import Payment from "@/assets/images/profile/avatar-3.svg";
+import Addresses from "@/assets/images/profile/avatar-4.svg";
+import Profile from "@/assets/images/profile/avatar-5.svg";
+import Image from "next/image";
 const actions = [
   {
     title: "My Purchases",
     description: "Track, return or re-buy items",
-    // icon: <FaShoppingBag className="text-teal-500" />,
+    icon: Purchases,
   },
   {
     title: "My Subscriptions",
     description: "Track and manage short term & long term services",
-    // icon: <FaChartLine className="text-teal-500" />,
+    icon: Subscription,
   },
   {
     title: "My Health Files",
     description: "Upload and manage your reports/prescriptions",
-    // icon: <FaFileMedical className="text-teal-500" />,
+    icon: Health,
   },
   {
     title: "Payment options",
     description: "Edit or add payment options",
-    // icon: <FaCreditCard className="text-teal-500" />,
+    icon: Payment,
   },
   {
     title: "Addresses",
     description: "Track and manage address",
-    // icon: <FaHome className="text-teal-500" />,
+    icon: Addresses,
   },
   {
     title: "Edit Profile",
     description: "Manage Login, Name and Mobile Number",
-    // icon: <FaUserEdit className="text-teal-500" />,
+    icon: Profile,
   },
 ];
 
 const ProfileActions = () => {
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
         {actions.map((action, index) => (
           <div
             key={index}
-            className="flex items-center gap-4 p-4 border-b border-gray-200"
+            className="flex items-center gap-4 py-[18px] px-[10px] border-b border-gray-200  cursor-pointer"
           >
-            {/* <div className="text-2xl">{action.icon}</div> */}
+            <div className="text-2xl">
+              {" "}
+              <Image src={action.icon} alt="icon" width={60} height={60} />
+            </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3 className="text-black text-[20px] font-medium leading-normal font-roboto">
                 {action.title}
               </h3>
-              <p className="text-sm text-gray-600">{action.description}</p>
+
+              <p className="text-[#78858F] text-[14px] font-normal leading-[25.5px] tracking-[0.5px] font-roboto">
+                {action.description}
+              </p>
             </div>
           </div>
         ))}

@@ -15,21 +15,20 @@ const familyMembers = [
 const FamilyMembers = () => {
   return (
     <div className="p-4 mx-auto">
-      {/* Heading */}
-      <h2 className="text-[20px] font-semibold leading-[24px] text-gray-800 text-center mb-4">
+      <h2 className="text-[20px] font-semibold leading-[24px] text-[#000] text-center mb-4">
         Family Members
       </h2>
 
-      {/* Grid Layout for Family Members */}
-      <div className="grid grid-cols-2 gap-6 mb-6">
+      {/* Container for responsive layout */}
+      <div className="md:grid md:grid-cols-2 md:gap-6 mb-6 mt-10 flex md:flex-wrap overflow-x-auto md:overflow-visible gap-4 items-center">
+        {/* Family Members */}
         {familyMembers.map((member, index) => (
           <div
             key={index}
-            className="flex flex-col items-center gap-2 text-center"
+            className="flex flex-col items-center gap-2 text-center min-w-[64px] md:min-w-0"
           >
-            {/* Image Container */}
             <div
-              className="w-[85px] h-[85px] rounded-full bg-gradient-to-r from-[#BDFEFF] to-[#5FA4A7] p-[2px]"
+              className="w-[42px] h-[42px] md:w-[85px] md:h-[85px] rounded-full bg-gradient-to-r from-[#BDFEFF] to-[#5FA4A7] p-[2px]"
               style={{
                 borderImageSource:
                   "linear-gradient(118.43deg, #1AE2E9 -5.9%, #019196 42.54%, #03676A 90.98%)",
@@ -39,32 +38,29 @@ const FamilyMembers = () => {
               <Image
                 src={member.imgSrc}
                 alt={member.name}
-                width={81}
-                height={81}
-                className="rounded-full"
+                width={42}
+                height={42}
+                className="rounded-full md:w-[81px] md:h-[81px]"
               />
             </div>
-
-            {/* Member Name */}
-            <span className="text-[14px] font-medium leading-[16.8px] text-gray-700 text-center">
+            <span className="text-[12px] md:text-[14px] font-medium leading-[16.8px] text-gray-700 text-center">
               {member.name}
             </span>
           </div>
         ))}
+
+        {/* Add More Button */}
+        <button className="flex flex-col items-center justify-center min-w-[100px] md:min-w-0">
+          <div className="w-[42px] h-[42px] md:w-[81px] md:h-[81px] rounded-full bg-[#004548] flex items-center justify-center">
+            <span className="text-white text-[24px] md:text-[40px] font-bold -mt-1 md:-mt-2">
+              +
+            </span>
+          </div>
+          <span className="text-center text-[12px] md:text-[14px] font-medium leading-[16.8px] bg-gradient-to-r from-[#1AE2E9] to-[#019196] bg-clip-text text-transparent mt-2">
+            Add more
+          </span>
+        </button>
       </div>
-
-      {/* Add More Button */}
-      <button className="flex flex-col items-center justify-center">
-        {/* Circle with "+" */}
-        <div className="w-[81px] h-[81px] rounded-full bg-[#004548] flex items-center justify-center">
-          <span className="text-white text-[40px] font-bold -mt-2">+</span>
-        </div>
-
-        {/* Text below the circle */}
-        <span className="text-teal-500 mt-2 text-[14px] text-center">
-          Add more
-        </span>
-      </button>
     </div>
   );
 };
