@@ -13,7 +13,6 @@ import diagnosticServices from "@/assets/images/homepage/diagnosticServices.png"
 import { Card } from "../Card";
 
 const ComprehensiveServices = () => {
-  const [currentTestimony, setCurrentTestimony] = useState(0);
   const services = [
     {
       title: "Nurse at Home",
@@ -40,7 +39,7 @@ const ComprehensiveServices = () => {
       image: icuSetup,
     },
     {
-      title: "Doctors/ Nurses/ Physiotherapists Vists at Home",
+      title: "Doctors/ Nurses/ Physiotherapists Visits at Home",
       image: doctorsNurses,
     },
     {
@@ -68,30 +67,36 @@ const ComprehensiveServices = () => {
   return (
     <div>
       <div className="flex flex-col items-center mt-5 container w-full ">
-        <h1 className="text-[32px] font-semibold mb-5 text-[#031432] leading-[48px]">
+        <h1 className="text-[27px] md:text-[32px] font-semibold md:mb-5 text-[#031432] leading-[48px]">
           Our Comprehensive Services
         </h1>
-        <p className="text-[#6C87AE] w-full lg:w-[60%] text-center text-base">
+        <p className="hidden md:block text-[#6C87AE] w-full lg:w-[60%] text-center text-base">
           Explore a range of healthcare services tailored to meet your needs. At
           Apollo Homecare, we provide flexible, high-quality support designed
           for every stage of life and wellness.
         </p>
       </div>
-      <div className="flex flex-wrap mt-[34px] mb-[100px] w-full container mx-auto gap-5">
+      <div className="flex flex-wrap mt-[10px] md:mt-[34px] mb-[100px] w-full container mx-auto gap-5">
         <div className="md:hidden overflow-x-auto">
-          <div className="flex w-max">
+          {/* <div className="flex w-max"> */}
+          <div className="grid grid-cols-3 gap-4 p-4">
             {services.slice(0, 6).map((service, index) => (
               <div key={index} className="flex-shrink-0  p-2 services_cards">
+              <div
+                key={index}
+                className="flex-shrink-0  services_cards"
+              >
                 <Card title={service?.title} image={service?.image} />
               </div>
             ))}
           </div>
 
-          <div className="flex mt-5 w-max">
+          {/* <div className="flex mt-5 w-max"> */}
+          <div className="grid grid-cols-3 gap-4 p-4">
             {services.slice(6, 12).map((service, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-32 p-2 services_cards"
+                className="flex-shrink-0 services_cards"
               >
                 <Card title={service?.title} image={service?.image} />
               </div>
@@ -100,10 +105,10 @@ const ComprehensiveServices = () => {
         </div>
 
         {/* Desktop View */}
-        <div className="hidden md:flex flex-wrap justify-center gap-2">
-          {services.map((item) => (
-            <div key={item.title} className="w-[200px]">
-              <Card title={item.title} image={item.image} />
+        <div className="hidden md:grid grid-cols-6 gap-5">
+          {services.map((service, index) => (
+            <div key={index}>
+              <Card title={service.title} image={service.image} />
             </div>
           ))}
         </div>

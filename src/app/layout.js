@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
+import BottomNav from "@/components/ui/BottomNav";
 
 
 export const metadata = {
@@ -22,11 +23,14 @@ export default function RootLayout({ children }) {
 
 
     </head>
-
     <body>
+    <body
+      className={`${geistSans.variable} ${geistMono.variable} font-poppins antialiased overflow-x-hidden`}
+    >
       <Header />
       {children}
       <Footer />
+      <BottomNav/>
     </body>
   </html>
   );
