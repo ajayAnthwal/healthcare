@@ -310,8 +310,7 @@ const Home = () => {
         <p className="text-[16px] font-normal leading-[24px] text-center text-[#6C87AE] mt-4 w-full sm:w-3/4 md:w-1/2 mx-auto">
           Choosing Apollo Homecare means choosing a healthcare provider that
           prioritizes your comfort, convenience, and well-being. Discover why
-          countless families trust us to deliver exceptional care right at home.
-        </p>
+          countless families trust us to deliver exceptional care right at home. </p>
       </div>
       <div className="mt-5 flex flex-col sm:flex-row justify-center gap-[42px] container mx-auto px-4">
         {/* Image Section */}
@@ -478,7 +477,7 @@ const Home = () => {
         <p className="mt-4 w-1/2 text-center text-[#6C87AE] text-[16px] font-[400] leading-[24px]">
           Stay updated with the latest news and media coverage about Apollo
           Homecare. Our commitment to <br /> providing quality care has made us
-          a trusted name in the healthcare industry, and our recent <br />{" "}
+          a trusted name in the healthcare industry, and our recent <br />
           achievements are gaining attention.
         </p>
 
@@ -563,6 +562,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

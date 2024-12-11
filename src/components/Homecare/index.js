@@ -14,7 +14,7 @@ const Homecare = () => {
         <p className="text-sm opacity-80 w-[676px] text-center mx-auto">
           In today&rsquo;s fast-paced world, the importance of receiving medical
           care at home has never been greater. Homecare offers a comfortable,
-          safe, and personalized approach to healthcare, providing support for
+          safe, and personalized approach to healthcare, providing support for </p>
     <div
       className="mx-2 md:mx-0 bg-gradient-to-linear-gradient(118.43deg, #1AE2E9 -5.9%, #019196 42.54%, #03676A 90.98%) overflow-x-hidden">
       {/* ---------------Homecare Section---------------- */}
@@ -42,6 +42,8 @@ const Homecare = () => {
           </button>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   );
 };

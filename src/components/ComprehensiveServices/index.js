@@ -88,6 +88,7 @@ const ComprehensiveServices = () => {
               >
                 <Card title={service?.title} image={service?.image} />
               </div>
+              </div>
             ))}
           </div>
 
