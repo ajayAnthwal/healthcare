@@ -29,10 +29,9 @@ const Login = () => {
         </div>
 
         <div
-          className="flex-1 p-8 text-white bg-gradient-to-r from-[#1AE2E9] to-[#03676A] 
-          border border-solid 
-          border-image-[linear-gradient(108.87deg,_rgba(255,_255,_255,_0.8)_0.66%,_rgba(211,_211,_211,_0.1)_99.48%)] 
-          backdrop-blur-[28px] rounded-[27px] max-w-[479px] h-[497px] w-full sm:w-[90%] md:w-[479px]"
+          className="w-full sm:w-[90%] md:w-[479px] p-8 text-white bg-gradient-to-r from-[#1AE2E9] to-[#03676A] 
+      rounded-[27px] border border-solid border-white/[0.8] backdrop-blur-[28px] lg:ml-6 
+      -mt-[67px] lg:mt-0"
           style={{
             background:
               "linear-gradient(118.43deg, #1AE2E9 -5.9%, #019196 42.54%, #03676A 90.98%)",

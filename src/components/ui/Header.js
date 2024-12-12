@@ -19,7 +19,7 @@ const Header = () => {
     <div className="bg-[#e6f5f5]">
       {/* Top Header */}
       <div className="sticky top-0 inset-x-0 z-50">
-        <header className="h-16 border-b bg-[#e6f5f5] border-ui-border-base">
+        <header className="h-16 border-b bg-[#e6f5f5] border-ui-border-base hidden md:block">
           <nav className="container flex items-end justify-end w-full h-full px-4 mx-auto">
             <div className="flex items-center gap-x-6 h-full">
               <div className="flex items-center text-[#FF784B] font-medium text-sm">
@@ -50,38 +50,38 @@ const Header = () => {
         {/* Main Header */}
         <div className="bg-[#e6f5f5]" style={{ top: "4rem" }}>
           <div className="container flex justify-between items-center mx-auto px-4 md:px-0">
-          <Image
+            <Image
               alt="logo"
               loading="lazy"
               width={174}
               height={74}
               decoding="async"
               src={logo}
-              className="absolute top-[16px] p-3"
+              className="absolute top-[16px] p-3 hidden sm:block"
             />
 
             <div className="hidden md:flex items-center gap-x-6 mx-auto">
               <Link
                 href="/"
-                className="text-[16px] cursor-pointer text-[#009A9F] hover:bg-[#FF784B] hover:text-white hover:border-[#FF784B] hover:border-[1px] px-4 py-2 rounded-[4px] transition-all"
+                className="text-[16px] cursor-pointer text-[#009A9F] hover:bg-[#FF784B] hover:text-white hover:border-[#FF784B] hover:border-[1px] py-1 px-2.5  rounded-[4px] transition-all"
               >
                 Home
               </Link>
               <Link
                 href="/long-term-care"
-                className="text-[16px] cursor-pointer text-[#009A9F] hover:bg-[#FF784B] hover:text-white hover:border-[#FF784B] hover:border-[1px] px-4 py-2 rounded-[4px] transition-all"
+                className="text-[16px] cursor-pointer text-[#009A9F] hover:bg-[#FF784B] hover:text-white hover:border-[#FF784B] hover:border-[1px] py-1 px-2.5 rounded-[4px] transition-all"
               >
                 Long term care
               </Link>
               <Link
                 href="/home-visit"
-                className="text-[16px] cursor-pointer text-[#009A9F] hover:bg-[#FF784B] hover:text-white hover:border-[#FF784B] hover:border-[1px] px-4 py-2 rounded-[4px] transition-all"
+                className="text-[16px] cursor-pointer text-[#009A9F] hover:bg-[#FF784B] hover:text-white hover:border-[#FF784B] hover:border-[1px] py-1 px-2.5 rounded-[4px] transition-all"
               >
                 Home visit
               </Link>
               <Link
                 href="/medical-equipment"
-                className="text-[16px] cursor-pointer text-[#009A9F] hover:bg-[#FF784B] hover:text-white hover:border-[#FF784B] hover:border-[1px] px-4 py-2 rounded-[4px] transition-all"
+                className="text-[16px] cursor-pointer text-[#009A9F] hover:bg-[#FF784B] hover:text-white hover:border-[#FF784B] hover:border-[1px] py-1 px-2.5 rounded-[4px] transition-all"
               >
                 Medical Equipment
               </Link>

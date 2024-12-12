@@ -15,7 +15,7 @@ const familyMembers = [
 const FamilyMembers = () => {
   return (
     <div className="p-4 mx-auto">
-      <h2 className="text-[20px] font-semibold leading-[24px] text-[#000] text-center mb-4">
+      <h2 className="text-[20px] font-semibold leading-[24px] text-[#000] text-center md:text-left flex mb-4">
         Family Members
       </h2>
 

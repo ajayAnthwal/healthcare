@@ -20,6 +20,7 @@ import stethoscope_arrow from "@/assets/images/homepage/stethoscope_arrow.png";
 import relax from "@/assets/images/homepage/relax.png";
 import emoji_people from "@/assets/images/homepage/emoji_people.png";
 import star from "@/assets/images/homepage/star.svg";
+import starwhite from "@/assets/images/homepage/star-white.svg";
 
 // Animation assets
 import arrows from "@/assets/images/homepage/animation1/arrows.png";
@@ -34,12 +35,14 @@ import textContent2 from "@/assets/images/homepage/animation2/textContent.png";
 import wheelchair from "@/assets/images/homepage/animation3/wheelchair.png";
 import hand from "@/assets/images/homepage/animation3/hand.png";
 import textContent3 from "@/assets/images/homepage/animation3/textContent.png";
+import choose from "@/assets/images/homepage/whychoose2.png";
 import Image from "next/image";
 import ComprehensiveServices from "@/components/ComprehensiveServices";
 import Homemade from "@/components/Homecare";
 import LongTermCare from "@/components/Long-term-care/LongTermCare";
 import BookComponent from "@/components/Book/BookComponent";
 import BuyRentEqu from "@/components/BuyRent/BuyRentEqu";
+
 
 const Home = () => {
   const [currentTestimony, setCurrentTestimony] = useState(0);
@@ -131,6 +134,7 @@ const Home = () => {
 
   return (
     <div>
+      <div className="bg-[#e6f5f5]">
       <div
         style={{
           width: "100%",
@@ -138,7 +142,7 @@ const Home = () => {
           height: "40rem",
           backgroundColor: "#e6f5f5",
         }}
-        className="relative"
+        className="relative hidden md:block mx-auto"
       >
         <Image
           alt=""
@@ -292,13 +296,15 @@ const Home = () => {
           />
         </div>
       </div>
+      </div>
+
 
       <div className="overflow-x-hidden">
         {/* <Image src={banner} alt="banner" className="hidden md:block w-full z-1" /> */}
         <div className="flex flex-col items-center mt-5 container w-full mx-auto md:px-4 px-2">
           <ComprehensiveServices />
         </div>
-        <div className="container mx-auto flex">
+        <div className="container mx-auto flex my-[70px]">
           <Image src={healthcare} alt="banner" className="w-[100%]" />
         </div>
 
@@ -327,7 +333,9 @@ const Home = () => {
           <p className="md:text-[16px] lg:text-[16px] text-[10px] font-normal md:leading-[24px] leading-4 text-center text-[#6C87AE] mt-4 w-full sm:w-3/4 md:w-1/2 mx-auto">
             Choosing Apollo Homecare means choosing a healthcare provider that
             prioritizes your comfort, convenience, and well-being. Discover why
-            countless families trust us to deliver exceptional care right at home. </p>
+            countless families trust us to deliver exceptional care right at
+            home.{" "}
+          </p>
         </div>
         <div className="mt-5 flex flex-col sm:flex-row justify-center gap-[42px] container mx-auto">
           {/* Image Section */}
@@ -374,8 +382,8 @@ const Home = () => {
               Advanced Technology
             </h1>
             <p className="md:text-[16px] text-[10px] md:leading-[24px] text-justify text-[#6C87AE] md:mt-4 sm:w-3/4">
-              From remote health monitoring to on-demand consultations, we use the
-              latest technology to provide efficient and reliable care.
+              From remote health monitoring to on-demand consultations, we use
+              the latest technology to provide efficient and reliable care.
             </p>
 
             <h1 className="text-lg md:text-[32px] leading-[48px] text-left text-[#031432] font-bold md:mt-8">
@@ -399,16 +407,16 @@ const Home = () => {
           <div className="md:w-[40%] w-full m-auto">
             <Image
               className="w-1/2 m-auto md:w-full sm:mr-20 rounded-[32px]"
-              src={whyChooseUs1}
+              src={choose}
               alt="Why Choose Us 1"
             />
           </div>
         </div>
 
         {/* ---------------Statistics Section---------------- */}
-        <div className="container mx-auto md:mt-20 mt-6 px-4">
+        <div className="container mx-auto md:mt-20 mt-6 py-5 px-7 rounded-[28px]">
           <div
-            className="md:bg-custom-gradient bg-gray-200 flex items-center justify-between p-4 rounded-2xl"
+            className="md:bg-custom-gradient bg-gray-200 flex items-center justify-between py-5 px-7  rounded-[28px]"
             // style={{
             //   background:
             //     "linear-gradient(118.43deg, #1AE2E9 -5.9%, #019196 42.54%, #03676A 90.98%)",
@@ -419,14 +427,14 @@ const Home = () => {
               <Image
                 src={stethoscope_arrow}
                 alt="Patients Served"
-                width={40}
-                height={40}
-                className="mb-1 md:w-[36px] md:h-[36px] w-[24px] h-[24px]"
+                width={60}
+                height={60}
+                className="mb-1 md:w-[60px] md:h-[60px] w-[24px] h-[24px]"
               />
-              <h4 className="md:text-white text-black font-[600] tracking-[0.13px] md:text-xl mb-1 text:lg">
+              <h4 className="md:text-white text-black font-[600] tracking-[0.13px] md:text-[32px] mb-1 text-[14px]">
                 1Mn+
               </h4>
-              <p className="md:text-white text-black opacity-75 font-[600] md:text-[12px] text-[8px]">
+              <p className="md:text-white text-black opacity-75 font-[600] md:text-[18px] text-[7px]">
                 PATIENTS SERVED A YEAR
               </p>
             </div>
@@ -438,14 +446,14 @@ const Home = () => {
               <Image
                 src={relax}
                 alt="Care Hours"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className="mb-2 md:w-[40px] md:h-[40px] w-[24px] h-[24px]"
               />
-              <h4 className="md:text-white text-black font-[600] tracking-[0.13px] md:text-xl mb-1 text:lg">
+              <h4 className="md:text-white text-black font-[600] tracking-[0.13px] md:text-[32px] mb-1 text-[14px]">
                 5Mn+
               </h4>
-              <p className="md:text-white text-black opacity-75 font-[600] md:text-[12px] text-[8px]">
+              <p className="md:text-white text-black opacity-75 font-[600] md:text-[18px] text-[7px]">
                 CARE HOURS PERFORMED
               </p>
             </div>
@@ -457,14 +465,14 @@ const Home = () => {
               <Image
                 src={emoji_people}
                 alt="Care Givers"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className="mb-2 md:w-[40px] md:h-[40px] w-[24px] h-[24px]"
               />
-              <h4 className="md:text-white text-black font-[600] tracking-[0.13px] md:text-xl mb-1 text:lg">
+              <h4 className="md:text-white text-black font-[600] tracking-[0.13px] md:text-[32px] mb-1 text-[14px]">
                 2K+
               </h4>
-              <p className="md:text-white text-black opacity-75 font-[600] md:text-[12px] text-[8px]">
+              <p className="md:text-white text-black opacity-75 font-[600] md:text-[18px] text-[7px]">
                 CARE GIVERS
               </p>
             </div>
@@ -474,32 +482,31 @@ const Home = () => {
             {/* Rating Section */}
             <div className="flex flex-col items-center p-[0px]">
               <Image
-                src={star}
+                src={starwhite}
                 alt="Rating"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className="mb-2 md:w-[40px] md:h-[40px] w-[24px] h-[24px]"
               />
-              <h4 className="md:text-white text-black font-[600] tracking-[0.13px] md:text-xl mb-1 text:lg">
+              <h4 className="md:text-white text-black font-[600] tracking-[0.13px] md:text-[32px] mb-1 text-[14px]">
                 4.9
               </h4>
-              <p className="md:text-white text-black opacity-75 font-[600] md:text-[12px] text-[8px]">
+              <p className="md:text-white text-black opacity-75 font-[600] md:text-[18px] text-[7px]">
                 RATING ON GOOGLE
               </p>
             </div>
           </div>
-
         </div>
 
-        <div className="flex flex-col md:mt-20 mt-6 items-center px-4">
+        <div className="flex flex-col md:mt-20 mt-6 items-center px-4 container mx-auto">
           <h1 className="md:text-[32px] lg:text-[32px] text-xl  font-bold md:leading-[48px] leading-[10px] text-center text-[#031432]">
-            in the news
+            In the news
           </h1>
           <p className="md:text-[16px] lg:text-[16px] text-[10px] font-normal md:leading-[24px] leading-4 text-center text-[#6C87AE] mt-4 w-full sm:w-3/4 md:w-1/2 mx-auto">
             Stay updated with the latest news and media coverage about Apollo
-            Homecare. Our commitment to providing quality care has made us
-            a trusted name in the healthcare industry, and our recent
-            achievements are gaining attention.
+            Homecare. Our commitment to providing quality care has made us a
+            trusted name in the healthcare industry, and our recent achievements
+            are gaining attention.
           </p>
 
           <div
@@ -514,10 +521,12 @@ const Home = () => {
               className="w-[30%] rounded-tl-lg rounded-bl-lg"
             />
             <div className="md:m-5 m-[2px]">
-              <h1 className="text-[14px] md:text-3xl md:mt-0 mt-[5px] font-bold">Recent Media Coverage</h1>
+              <h1 className="text-[14px] md:text-3xl md:mt-0 mt-[5px] font-bold">
+                Recent Media Coverage
+              </h1>
               <p className="md:mt-4 text-gray-600 md:text-[14px] text-[10px] md:text-md my-1">
-                &quot;Apollo Homecare’s New Homecare Initiative Gains Recognition
-                in Healthcare Magazine&quot;
+                &quot;Apollo Homecare’s New Homecare Initiative Gains
+                Recognition in Healthcare Magazine&quot;
               </p>
               <p className="md:text-[14px] text-[10px] text-gray-600 text-md my-1">
                 &quot;Apollo Homecare Featured in National News for Pioneering
@@ -544,12 +553,13 @@ const Home = () => {
         </div>
         {/* ---------------About Apollo---------------- */}
         <div className="flex flex-col items-center md:mt-16 mt-6">
-          <h1 className="md:text-[32px] lg:text-[32px] text-xl  font-bold md:leading-[48px] leading-[10px] text-center text-[#031432]">About Apollo Homecare</h1>
-          <p className="md:text-[16px] lg:text-[16px] text-[10px] font-normal md:leading-[24px] leading-4 text-center text-[#6C87AE] mt-4 w-full sm:w-3/4 md:w-1/2 mx-auto">
+          <h1 className="md:text-[32px] lg:text-[32px] text-xl  font-bold md:leading-[48px] leading-[10px] text-center text-[#031432]">
+            About Apollo Homecare
+          </h1>
+          <p className="md:text-[16px] lg:text-[16px] text-[10px] font-normal md:leading-[24px] leading-4 text-center text-[#6C87AE] mt-4 w-full sm:w-3/4 md:w-[38%] mx-auto">
             Apollo Homecare is dedicated to bringing world-class healthcare
-            services directly to your home. As a trusted leader in
-            healthcare, we combine professional medical expertise with
-            personalized care to
+            services directly to your home. As a trusted leader in healthcare,
+            we combine professional medical expertise with personalized care to
             support you and your loved ones through every step of your health
             journey.
           </p>
@@ -559,18 +569,18 @@ const Home = () => {
             {abouts.map((item, index) => (
               <div
                 key={index}
-                className="px-4 py-2"
+                className="px-[29px] py-[22px]"
                 style={{
                   boxShadow: "0px 10px 40px 0px rgba(18, 18, 18, 0.10)",
                   borderRadius: "0px 0px 10px 10px",
                   borderTop: "3px solid var(--Green-Normal, #009A9F)",
                 }}
               >
-                <Image src={item.image} alt="image" />
+                <Image src={item.image} alt="image" height={40} width={40} />
                 <h4 className="md:mt-3 font-[700] text-[14px] leading-[28px] tracking-[0.03em] text-left text-[#121212]">
                   {item.title}
                 </h4>
-                <p className="md:mt-3 text-[10px] font-[400] leading-[16px] tracking-[0.03em] text-left text-[#696969]">
+                <p className="md:mt-3 text-[12px] font-[400] leading-[16px] tracking-[0.03em] text-left text-[#696969]">
                   {item.desc}
                 </p>
               </div>

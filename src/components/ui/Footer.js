@@ -56,7 +56,7 @@ export default async function Footer() {
       className="w-full p-4 pt-10 mt-5"
       style={{ backgroundColor: "#002122", color: "white" }}
     >
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col  md:flex-row">
         <div className="grid grid-cols-2 md:flex container mx-auto gap-2">
           {/* <div className="grid grid-cols-3 gap-4 p-4"> */}
           {items.map((item, index) => (
@@ -178,7 +178,7 @@ export default async function Footer() {
       </div>
 
       <hr className="mt-1" style={{ opacity: "0.28" }} />
-      <div className="mt-4 flex" style={{ opacity: "0.8" }}>
+      <div className="mt-4 flex container mx-auto " style={{ opacity: "0.8" }}>
         <div className=" inline-block">
           <h1 className="inline-block font-semibold me-3">CONTACT US:</h1>
         </div>
@@ -200,7 +200,7 @@ export default async function Footer() {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-2 justify-center md:flex md:justify-start mt-4 ">
+      <div className="grid grid-cols-2 justify-center md:flex md:justify-start mt-4 container mx-auto ">
         {options.map((item, index) => (
           <div className="">
             <p

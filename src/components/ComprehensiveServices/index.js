@@ -55,11 +55,11 @@ const ComprehensiveServices = () => {
       image: diagnosticServices,
     },
     {
-      title: "Vaccinations at Home 2",
+      title: "Buy or Rent Medical Equipment",
       image: vaccinationAtHome,
     },
     {
-      title: "Diagnostic Services 2",
+      title: "Ambulatory Blood Pressure Monitoring",
       image: diagnosticServices,
     },
   ];
@@ -87,51 +87,53 @@ const ComprehensiveServices = () => {
 
   return (
     <div>
-    <div className="flex flex-col items-center mt-5 container w-full ">
-      <h1 className="text-[27px] md:text-[32px] font-semibold md:mb-5 text-[#031432] leading-[48px]">
-        Our Comprehensive Services
-      </h1>
-      <p className="hidden md:block text-[#6C87AE] w-full lg:w-[60%] text-center text-base">
-        Explore a range of healthcare services tailored to meet your needs.
-        At Apollo Homecare, we provide flexible, high-quality support designed
-        for every stage of life and wellness.
-      </p>
-    </div>
+      <div className="flex flex-col items-center mt-5 container w-full ">
+        <h1 className="text-[18px] font-bold md:text-[32px]  text-[#031432] leading-normal font-poppins">
+          Our Comprehensive Services
+        </h1>
+        <p className="md:block hidden text-[#6C87AE] w-full lg:w-[60%] text-center text-base leading-6">
+          Explore a range of healthcare services tailored to meet your needs. At
+          Apollo Homecare, we provide <br /> flexible, high-quality support
+          designed for every stage of life and wellness.
+        </p>
+      </div>
 
-    {/* Mobile Slider View */}
-    <div className="md:hidden overflow-hidden relative">
-      <div className="grid grid-cols-3 gap-1">
-        {getVisibleItems().map((service, index) => (
-          <div key={index} className="services_cards my-1">
-            <Card title={service?.title} image={service?.image} />
+      {/* Mobile Slider View */}
+      <div className="md:hidden overflow-hidden relative">
+        <div className="grid grid-cols-3 gap-[10px]">
+          {getVisibleItems().map((service, index) => (
+            <div key={index} className="services_cards my-1">
+              <Card title={service?.title} image={service?.image} />
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="flex justify-center gap-2 px-4 -translate-y-1/2 my-4">
+          <button
+            onClick={handlePrev}
+            className={` text-white rounded-full ${
+              currentSlide == 0 ? " px-4 bg-[#009a9f]" : "px-1 bg-gray-400"
+            } py-1`}
+          ></button>
+          <button
+            onClick={handleNext}
+            className={`text-white rounded-full py-1 ${
+              currentSlide == 1 ? " px-4 bg-[#009a9f]" : "px-1 bg-gray-400"
+            }`}
+          ></button>
+        </div>
+      </div>
+
+      {/* Desktop View */}
+      <div className="hidden md:grid grid-cols-6 gap-5 mt-11 mb-11 font-poppins">
+        {services.map((service, index) => (
+          <div key={index}>
+            <Card title={service.title} image={service.image} />
           </div>
         ))}
       </div>
-
-      {/* Navigation Buttons */}
-      <div className="flex justify-center gap-2 px-4 -translate-y-1/2 my-4">
-        <button
-          onClick={handlePrev}
-          className={` text-white rounded-full ${currentSlide==0 ? " px-4 bg-[#009a9f]" : "px-1 bg-gray-400" } py-1`}
-        >
-        </button>
-        <button
-          onClick={handleNext}
-          className={`text-white rounded-full py-1 ${currentSlide==1 ? " px-4 bg-[#009a9f]" : "px-1 bg-gray-400" }`}
-        >
-        </button>
-      </div>
     </div>
-
-    {/* Desktop View */}
-    <div className="hidden md:grid grid-cols-6 gap-5">
-      {services.map((service, index) => (
-        <div key={index}>
-          <Card title={service.title} image={service.image} />
-        </div>
-      ))}
-    </div>
-  </div>
   );
 };
 

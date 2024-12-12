@@ -10,7 +10,7 @@ export const Card = (props) => {
       }}
     >
       <div className="">
-        <p className="text-[12px] md:text-lg font-medium text-[#000000] pt-3 text-center">
+        <p className="text-[12px] md:text-[20px] font-medium text-[#000000] pt-3 text-center">
           {props?.title}
         </p>
       </div>
@@ -22,13 +22,16 @@ export const Card = (props) => {
         />
       </div>
       <div className="flex justify-center">
-  <button className="flex items-center gap-2 text-base font-semibold bg-white text-[#009A9F] border-[#009A9F] rounded-full px-4 py-4 m-auto border absolute bottom-3 h-[23px] text-[11px] md:text-sm md:h-[40px] md:px-6 md:py-3 md:gap-3">
-    <Image src={whatsappSvg} alt="whatsapp" className="h-[8px] w-[8px] md:h-[15px] md:w-[15px]" />
-    <span className="hidden md:inline">Enquire Now</span>
-    <span className="inline md:hidden">Enquire</span>
-  </button>
-</div>
-
+        <button className="flex items-center gap-2 text-base font-semibold bg-white text-[#009A9F] border-[#009A9F] rounded-full px-4 py-4 m-auto border absolute bottom-3 h-[23px] text-[11px] md:text-sm md:h-[40px] md:px-6 md:py-3 md:gap-3">
+          <Image
+            src={whatsappSvg}
+            alt="whatsapp"
+            className="h-[8px] w-[8px] md:h-[15px] md:w-[15px]"
+          />
+          <span className="hidden md:inline">Enquire Now</span>
+          <span className="inline md:hidden">Enquire</span>
+        </button>
+      </div>
     </div>
   );
 };
